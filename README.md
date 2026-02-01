@@ -49,8 +49,12 @@ I’m a hardware-focused engineering professional with hands-on experience in **
 - Built repeatable tests for sensor read reliability and actuation timing
 - Created documentation and diagrams for system design
 
-📌 Repo: https://github.com/YOUR-USERNAME/chicken-tracker  
-📄 Docs: (add PDF/report link)
+Schematics
+<img width="995" height="1164" alt="image" src="https://github.com/user-attachments/assets/5dff7cc6-31f1-473d-8150-0158027af5d8" />
+PCB Design *work in progress*
+<img width="728" height="788" alt="image" src="https://github.com/user-attachments/assets/18b6226e-c4e1-4346-b347-3725562bf4e8" />
+
+
 
 ---
 
