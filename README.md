@@ -14,21 +14,9 @@ I’m a hardware-focused engineering professional with hands-on experience in **
 ---
 
 ## Featured Projects
-
-### 1) 5-Channel TDM-PCM Communication System
-**What it is:** Built a discrete-logic TDM-PCM system with receiver-side serial-to-parallel conversion and analog reconstruction.  
-**Tech:** 74164 (SIPO), 4017 (counter), 4066/4016 (analog switches), 8-bit DAC, LPF reconstruction, oscilloscope validation  
-**Highlights:**
-- Implemented round-robin channel selection and synchronized sampling
-- Validated reconstructed waveforms and filter behavior vs. expectations
-- Documented design constraints and improvement path
-
-📌 Repo: https://github.com/YOUR-USERNAME/tdm-pcm-system  
-📷 Media: (add a screenshot folder link)
-
 ---
 
-### 2) WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
+WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
 **What it is:** Vehicle that switches between manual drive and autonomous obstacle-avoidance using IR + ultrasonic sensing.  
 **Tech:** Arduino, L298N, PWM speed control, IR sensors, ultrasonic sensor, state-based control logic  
 **Highlights:**
@@ -41,7 +29,7 @@ I’m a hardware-focused engineering professional with hands-on experience in **
 
 ---
 
-### 3) RFID “Chicken Tracker” Capstone (RFID + Sensors + Actuation)
+RFID “Chicken Tracker” Capstone (RFID + Sensors + Actuation)
 **What it is:** RFID-based coop monitoring with environment sensing + motion control.  
 **Tech:** Mega 2560, MFRC522, LCD, DHT11, stepper motors, water-level sensors  
 **Highlights:**
