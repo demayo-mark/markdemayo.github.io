@@ -2,7 +2,7 @@
 
 Senior Battery Test Technician (Lucid Motors) • B.S. Electronic Systems Engineering Technology (ABET) — Oct 2025  
 San Jose, CA • Email: demayo.markc@proton.me • Phone: (408) 813-0297  
-LinkedIn: https://www.linkedin.com/in/YOUR-LINK • GitHub: https://github.com/YOUR-USERNAME
+LinkedIn: https://www.linkedin.com/in/demayo-mark • GitHub: https://github.com/demayo-mark/markdemayo.github.io
 
 ---
 
