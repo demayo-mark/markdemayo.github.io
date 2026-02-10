@@ -13,7 +13,7 @@ I’m a hardware-focused engineering professional with hands-on experience in **
 
 ---
 
-## Featured Projects
+## Featured School Projects
 ---
 
 WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
@@ -23,9 +23,6 @@ WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
 - Designed mode switching and safety behavior
 - Verified sensor-triggered decisions and motor control response
 - Tuned thresholds and validated behavior in real environments
-
-📌 Repo: https://github.com/YOUR-USERNAME/autonomous-vehicle  
-📷 Demo: (add a short video link)
 
 ---
 
