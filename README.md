@@ -44,7 +44,7 @@ PCB Design *work in progress*
 ---
 ## Personal Projects 
 
-#!/usr/bin/env python3
+```python
 import re, time, requests
 from bs4 import BeautifulSoup
 from winotify import Notification
