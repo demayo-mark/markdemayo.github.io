@@ -41,7 +41,66 @@ PCB Design *work in progress*
 
 <img width="728" height="788" alt="image" src="https://github.com/user-attachments/assets/18b6226e-c4e1-4346-b347-3725562bf4e8" />
 
+---
+## Personal Projects 
 
+#!/usr/bin/env python3
+import re, time, requests
+from bs4 import BeautifulSoup
+from winotify import Notification
+
+URL = input("Chapter list URL: ").strip()
+MINUTES = int(input("Check every how many minutes? ").strip())
+STATE_FILE = "last_seen.txt"
+
+CHAPTER_RE = re.compile(r"(?:chapter|ch)\D*(\d+(?:\.\d+)?)", re.I)
+
+def toast(msg):
+    Notification(app_id="Manga Notifier", title="New chapter!", msg=msg).show()
+
+def get_latest_chapter(url):
+    html = requests.get(url, timeout=30).text
+    soup = BeautifulSoup(html, "html.parser")
+
+    nums = []
+    for a in soup.find_all("a"):
+        s = (a.get("href","") + " " + a.get_text(" ", strip=True))
+        m = CHAPTER_RE.search(s)
+        if m:
+            nums.append(float(m.group(1)))
+
+    return max(nums) if nums else None
+
+def load_last():
+    try:
+        return float(open(STATE_FILE, "r").read().strip())
+    except:
+        return 0.0
+
+def save_last(x):
+    open(STATE_FILE, "w").write(str(x))
+
+last = load_last()
+print("Last seen:", last)
+
+while True:
+    latest = get_latest_chapter(URL)
+
+    if latest is None:
+        print("Couldn't detect chapters on the page.")
+    elif last == 0.0:
+        last = latest
+        save_last(last)
+        print("Initialized to:", last)
+    elif latest > last:
+        toast(f"Chapter {latest} is out! (was {last})")
+        print("NEW:", latest)
+        last = latest
+        save_last(last)
+    else:
+        print("No update. Latest:", latest)
+
+    time.sleep(MINUTES * 60)
 
 ---
 
