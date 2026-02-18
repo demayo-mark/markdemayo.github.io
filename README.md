@@ -17,6 +17,7 @@ I’m a hardware-focused engineering professional with hands-on experience in **
 ---
 
 WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
+**Individual Project**
 **What it is:** Vehicle that switches between manual drive and autonomous obstacle-avoidance using IR + ultrasonic sensing.  
 **Tech:** Arduino, L298N, PWM speed control, IR sensors, ultrasonic sensor, state-based control logic  
 **Highlights:**
@@ -27,6 +28,7 @@ WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
 ---
 
 RFID “Chicken Tracker” Capstone (RFID + Sensors + Actuation)
+**Group Project**
 **What it is:** RFID-based coop monitoring with environment sensing + motion control.  
 **Tech:** Mega 2560, MFRC522, LCD, DHT11, stepper motors, water-level sensors  
 **Highlights:**
@@ -44,6 +46,8 @@ PCB Design *work in progress*
 ---
 ## Personal Projects 
 
+
+**Latest Chapter Notification** - work in progress
 ```python
 import re, time, requests
 from bs4 import BeautifulSoup
