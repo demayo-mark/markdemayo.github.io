@@ -112,7 +112,7 @@ while True:
 
 ## Skills & Tools
 **Test Equipment:** Oscilloscope • DMM • LCR • Power supplies • Hi-Pot • Environmental test equipment  
-**Software/Tools:** Jira • Confluence • JMP • Multisim • Fritzing • CAN tools (if applicable)  
+**Software/Tools:** Jira • Confluence • JMP • Multisim • Fritzing • CAN tools • CAD
 **Programming/Scripting:** Python • Shell (basic) • Embedded C/C++ (Arduino)
 
 ---
