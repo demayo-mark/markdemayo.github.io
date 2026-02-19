@@ -7,7 +7,7 @@ LinkedIn: https://www.linkedin.com/in/demayo-mark • GitHub: https://github.com
 ---
 
 ## About
-I’m a hardware-focused engineering professional with hands-on experience in **bench leveling test**, **high-voltage tests**, **test execution**, **debugging**, and **data-driven validation**. I build practical systems end-to-end—from requirements and schematics to bring-up, measurement, and documentation.
+I’m a hardware-focused engineering professional with hands-on experience in bench level tests, high-voltage tests, test execution, debugging, and data-driven validation.
 
 **Core strengths:** Test engineering • Validation • Troubleshooting • Lab instrumentation • Automation mindset
 
