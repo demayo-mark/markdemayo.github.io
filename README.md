@@ -25,6 +25,14 @@ WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
 - Verified sensor-triggered decisions and motor control response
 - Tuned thresholds and validated behavior in real environments
 
+**Autonomous Vehicle as Object Follower**
+
+
+https://github.com/user-attachments/assets/c5019ed8-b64d-4b65-9c5e-7fa9bb188d0f
+
+
+
+
 ---
 
 RFID “Chicken Tracker” Capstone (RFID + Sensors + Actuation)
