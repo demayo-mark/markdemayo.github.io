@@ -26,7 +26,9 @@ WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
 - Tuned thresholds and validated behavior in real environments
 
 **Autonomous Vehicle as Object Follower**
+
 Brief video of my vehicle reacting to an object in front of it 
+
 https://github.com/user-attachments/assets/c5019ed8-b64d-4b65-9c5e-7fa9bb188d0f
 
 
