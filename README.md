@@ -132,6 +132,20 @@ while True:
 
 ---
 
+## Hobbies
+- Weightlifting
+- Gaming
+- Building Gundam Model Kits
+
+![IMG_0275](https://github.com/user-attachments/assets/5b51d109-6858-44f1-a0da-bd5fb4795c9b)
+![IMG_0345](https://github.com/user-attachments/assets/3045bb62-a0b6-421c-b2a1-34d4e5ac693f)
+![IMG_1067](https://github.com/user-attachments/assets/77773533-1d42-48cc-8d6e-2ac7453cadc9)
+![IMG_1858](https://github.com/user-attachments/assets/c1b5b023-d8de-4ec9-ae9b-b1af51436db8)
+
+
+---
+
+
 ## Contact
 If you want to talk hardware validation, test engineering, or lab automation:  
 📧 demayo.markc@proton.me • 📍 San Jose, CA
