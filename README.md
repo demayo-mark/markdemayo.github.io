@@ -175,7 +175,7 @@ while True:
 
 **Software/Tools:** Jira • Confluence • JMP • Multisim • Fritzing • CAN tools • CAD
 
-**Programming/Scripting:** Python • Shell (basic) • Embedded C/C++ (Arduino)
+**Programming/Scripting:** Python • Shell (basic) • Embedded C/C++ (Arduino) • LabView
 
 ---
 
