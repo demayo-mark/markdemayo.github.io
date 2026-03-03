@@ -52,7 +52,7 @@ https://github.com/user-attachments/assets/c5019ed8-b64d-4b65-9c5e-7fa9bb188d0f
 
 **What it is:** RFID-based coop monitoring with environment sensing + motion control
 
-**Tech:** Mega 2560, MFRC522, LCD, DHT11, stepper motors, water-level sensors  
+**Components:** Mega 2560, MFRC522, LCD, DHT11, stepper motors, water-level sensors  
 
 **Highlights:**
 - Integrated multiple sensors and actuators into a coherent system
