@@ -69,6 +69,7 @@ PCB Design *work in progress*
 ---
 ## Personal Projects 
 
+**Overview:** Python based script that checks VIZ's website for the latest chapter of the manga Dandadan. When theres a new chapter, a Windows toast notification will pop-up
 
 **Latest Chapter Notification** 
 ```python
