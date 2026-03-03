@@ -28,7 +28,7 @@ WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
 
 **What it is:** Vehicle that switches between manual drive and autonomous obstacle-avoidance using IR + ultrasonic sensing
 
-**Tech:** Arduino, L298N, PWM speed control, IR sensors, ultrasonic sensor, state-based control logic  
+**Components:** Arduino, L298N, PWM speed control, IR sensors, ultrasonic sensor, state-based control logic  
 
 **Highlights:**
 - Designed mode switching and safety behavior
@@ -169,7 +169,7 @@ while True:
 
 ---
 
-## Skills & Tools
+## Skills 
 
 **Test Equipment:** Oscilloscope • DMM • LCR • Power supplies • Hi-Pot • Environmental test equipment • CANoe/CANanalyzer 
 
