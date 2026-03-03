@@ -26,7 +26,7 @@ WiFi-Controlled Autonomous Vehicle (Manual + Sensor Modes)
 
 **<ins>Individual Project</ins>**
 
-**What it is:** Vehicle that switches between manual drive and autonomous obstacle-avoidance using IR + ultrasonic sensing
+**Overview:** Vehicle that switches between manual drive and autonomous obstacle-avoidance using IR + ultrasonic sensing
 
 **Components:** Arduino, L298N, PWM speed control, IR sensors, ultrasonic sensor, state-based control logic  
 
@@ -50,7 +50,7 @@ https://github.com/user-attachments/assets/c5019ed8-b64d-4b65-9c5e-7fa9bb188d0f
 
 **<ins>Group Project</ins>**
 
-**What it is:** RFID-based coop monitoring with environment sensing + motion control
+**Overview:** RFID-based coop monitoring with environment sensing + motion control
 
 **Components:** Mega 2560, MFRC522, LCD, DHT11, stepper motors, water-level sensors  
 
