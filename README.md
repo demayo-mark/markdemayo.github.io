@@ -172,11 +172,19 @@ while True:
 
 ## Skills 
 
-**Test Equipment:** Oscilloscope • DMM • LCR • Power supplies • Hi-Pot • Environmental test equipment • CANoe/CANanalyzer 
+**Hardware Systems**: Battery systems, Embedded systems, System integration
 
-**Software/Tools:** Jira • Confluence • JMP • Multisim • Fritzing • CAN tools • CAD
+**Operating Systems**: Windows, macOS, Linux (Ubuntu)
 
-**Programming/Scripting:** Python • Shell (basic) • Embedded C/C++ (Arduino) • LabView
+**Tools & Software**: MS Office, Jira, Confluence, JMP, NI Multisim, Fritzing, CANoe, CANalyzer
+
+**Test Equipmen**t: Oscilloscopes, LCR Meters, Hi-Pot Testers, Multimeters, Function Generators 
+
+**Programming/Scripting**: Python, UART, Shell scripting, C/C++, LabVIEW
+
+**Electronics**: Soldering, Wire harness assembly, PCB rework, Circuit debugging
+
+**Additional Skills**: Data analysis, documentation, customer support, calibration procedures
 
 ---
 
