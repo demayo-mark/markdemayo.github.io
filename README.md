@@ -168,6 +168,212 @@ while True:
     time.sleep(MINUTES * 60)
 ```
 
+**Overview:** Converts images such as recipets into CSV/EXCEL files
+**WORK IN PROGRESS**
+
+```python
+import re
+from pathlib import Path
+
+import cv2
+import pandas as pd
+import pytesseract
+
+
+# =========================================================
+# 1) PUT YOUR RECEIPT IMAGE PATH HERE
+# =========================================================
+RECEIPT_FILE = r"C:\Users\oyame\Downloads\Hero Ranch Kitchen.jpg" 
+
+# If Tesseract is not added to PATH, uncomment and edit this:
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+
+# =========================================================
+# 2) OCR IMAGE
+# =========================================================
+def extract_text_from_image(image_path):
+    img = cv2.imread(str(image_path))
+
+    if img is None:
+        raise ValueError(f"Could not open image: {image_path}")
+
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = cv2.resize(gray, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
+    gray = cv2.GaussianBlur(gray, (3, 3), 0)
+    _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+    text = pytesseract.image_to_string(thresh, config="--oem 3 --psm 6")
+    return text
+
+
+# =========================================================
+# 3) PARSE RECEIPT
+# =========================================================
+def clean_lines(text):
+    lines = []
+    for line in text.splitlines():
+        line = re.sub(r"\s+", " ", line).strip()
+        if line:
+            lines.append(line)
+    return lines
+
+
+def find_vendor(lines):
+    for line in lines[:8]:
+        low = line.lower()
+        if any(word in low for word in ["receipt", "invoice", "date", "time", "subtotal", "total"]):
+            continue
+        if re.search(r"\d+\.\d{2}", line):
+            continue
+        return line
+    return ""
+
+
+def find_date(text):
+    patterns = [
+        r"\b\d{1,2}/\d{1,2}/\d{2,4}\b",
+        r"\b\d{1,2}-\d{1,2}-\d{2,4}\b",
+        r"\b\d{4}-\d{1,2}-\d{1,2}\b",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            return match.group(0)
+    return ""
+
+
+def parse_money(value):
+    value = value.replace("$", "").replace(",", "").strip()
+    try:
+        return float(value)
+    except ValueError:
+        return None
+
+
+def find_amount(lines, keywords):
+    for line in lines:
+        low = line.lower()
+        if any(word in low for word in keywords):
+            amounts = re.findall(r"-?\$?\d{1,3}(?:,\d{3})*(?:\.\d{2})", line)
+            if amounts:
+                return parse_money(amounts[-1])
+    return None
+
+
+def extract_items(lines):
+    items = []
+
+    skip_words = {
+        "subtotal", "tax", "total", "balance", "change", "cash",
+        "visa", "credit", "debit", "receipt", "thank", "discount",
+        "savings", "sale", "amount"
+    }
+
+    for line in lines:
+        low = line.lower()
+
+        if any(word in low for word in skip_words):
+            continue
+
+        match = re.search(r"^(.*?)(\s+)(-?\$?\d{1,3}(?:,\d{3})*(?:\.\d{2}))$", line)
+        if match:
+            item_name = match.group(1).strip(" -:")
+            price = parse_money(match.group(3))
+
+            if item_name and price is not None:
+                items.append({
+                    "item": item_name,
+                    "price": price
+                })
+
+    return items
+
+
+def parse_receipt(text):
+    lines = clean_lines(text)
+
+    vendor = find_vendor(lines)
+    date = find_date(text)
+    subtotal = find_amount(lines, ["subtotal", "sub total"])
+    tax = find_amount(lines, ["tax"])
+    total = find_amount(lines, ["total", "grand total", "amount due"])
+    items = extract_items(lines)
+
+    summary = {
+        "vendor": vendor,
+        "date": date,
+        "subtotal": subtotal,
+        "tax": tax,
+        "total": total
+    }
+
+    return summary, items, lines
+
+
+# =========================================================
+# 4) SAVE TO CSV AND EXCEL
+# =========================================================
+def save_outputs(receipt_file, summary, items, raw_lines):
+    receipt_path = Path(receipt_file)
+    base_name = receipt_path.stem
+    output_folder = receipt_path.parent
+
+    summary_df = pd.DataFrame([summary])
+    items_df = pd.DataFrame(items if items else [{"item": "", "price": ""}])
+    raw_text_df = pd.DataFrame({"raw_text_lines": raw_lines})
+
+    summary_csv = output_folder / f"{base_name}_summary.csv"
+    summary_xlsx = output_folder / f"{base_name}_summary.xlsx"
+    items_csv = output_folder / f"{base_name}_items.csv"
+    items_xlsx = output_folder / f"{base_name}_items.xlsx"
+    raw_csv = output_folder / f"{base_name}_raw_text.csv"
+
+    summary_df.to_csv(summary_csv, index=False)
+    summary_df.to_excel(summary_xlsx, index=False)
+
+    items_df.to_csv(items_csv, index=False)
+    items_df.to_excel(items_xlsx, index=False)
+
+    raw_text_df.to_csv(raw_csv, index=False)
+
+    return summary_csv, summary_xlsx, items_csv, items_xlsx, raw_csv
+
+
+# =========================================================
+# 5) MAIN
+# =========================================================
+def main():
+    try:
+        print("Reading receipt...")
+        text = extract_text_from_image(RECEIPT_FILE)
+
+        print("\nOCR TEXT:")
+        print("-" * 50)
+        print(text)
+        print("-" * 50)
+
+        summary, items, raw_lines = parse_receipt(text)
+        outputs = save_outputs(RECEIPT_FILE, summary, items, raw_lines)
+
+        print("\nDone. Files created:")
+        for file in outputs:
+            print(file)
+
+        print("\nSummary found:")
+        for key, value in summary.items():
+            print(f"{key}: {value}")
+
+        print(f"\nItems found: {len(items)}")
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+
+if __name__ == "__main__":
+    main()
+
+
 ---
 
 ## Skills 
