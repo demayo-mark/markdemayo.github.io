@@ -12,7 +12,7 @@ GitHub: https://github.com/demayo-mark/markdemayo.github.io
 
 ---
 
-## About
+## About Me
 I’m a hardware-focused engineering professional with hands-on experience in bench level tests, high-voltage tests, test execution, debugging, and data-driven validation.
 
 **Core strengths:** Test engineering • Validation • Troubleshooting • Lab instrumentation • Automation mindset
